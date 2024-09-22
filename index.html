@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -36,13 +36,42 @@
               "text-form": "rgba(17, 17, 17, 0.4)",
               "form-bg": "rgba(17, 17, 17, 0.1)",
             },
+            fontFamily: {
+              lexend: ["Lexend", "sans-serif"],
+            },
           },
         },
       };
     </script>
   </head>
-  <body>
-    <header></header>
+  <body class="font-lexend">
+    <header class="bg-header-bg">
+      <!-- Navbar Section -->
+      <nav class="container flex justify-between items-stretch mx-auto py-6 md:items-center">
+        <button
+          class="text-xl text-text-primary font-semibold bg-btn-primary px-8 py-3 rounded-lg"
+        >
+          Blog
+        </button>
+        <div class="flex justify-center items-center gap-4 md:grow">
+          <img
+            src="./assets/logo.png"
+            alt="donate bangladesh logo"
+            class="size-12 hidden md:block"
+          />
+          <p class="text-xl font-semibold text-text-primary text-center md:text-left">
+            Donate Bangladesh
+          </p>
+        </div>
+        <div class="flex justify-end items-center gap-2">
+          <img src="./assets/coin.png" alt="coin icon" class="size-7 hidden md:block" />
+          <p class="text-xl font-semibold text-text-secondary text-center border border-btn-secondary rounded-lg md:text-left md:border-none">
+            <span>5500</span> BDT
+          </p>
+        </div>
+      </nav>
+    </header>
+
     <main></main>
     <footer></footer>
 
