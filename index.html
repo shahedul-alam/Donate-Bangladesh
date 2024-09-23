@@ -28,6 +28,7 @@
           extend: {
             colors: {
               "header-bg": "#F9F7F3",
+              "blur-bg": "rgba(255, 255, 255, 0.9)",
               "btn-primary": "#B4F461",
               "btn-secondary": "rgba(17, 17, 17, 0.3)",
               "btn-amount": "rgba(17, 17, 17, 0.05)",
@@ -45,46 +46,46 @@
     </script>
   </head>
   <body class="font-lexend">
-    <header class="bg-header-bg mb-12 md:mb-20">
+    <header class="bg-blur-bg sticky top-0">
       <!-- Navbar Section -->
-      <nav
-        class="container flex justify-between items-stretch mx-auto py-6 md:items-center"
-      >
-        <button
-          class="text-xl text-text-primary font-semibold bg-btn-primary px-8 py-3 rounded-lg"
+      <nav class="bg-header-bg mb-10 md:mb-20">
+        <div
+          class="container flex justify-between items-stretch mx-auto py-6 md:items-center"
         >
-          Blog
-        </button>
-        <div class="flex justify-center items-center gap-4 md:grow">
-          <img
-            src="./assets/logo.png"
-            alt="donate bangladesh logo"
-            class="size-12 hidden md:block"
-          />
-          <p
-            class="text-xl font-semibold text-text-primary text-center md:text-left"
+          <button
+            class="text-xl text-text-primary font-semibold bg-btn-primary px-8 py-3 rounded-lg"
           >
-            Donate Bangladesh
-          </p>
-        </div>
-        <div class="flex justify-end items-center gap-2">
-          <img
-            src="./assets/coin.png"
-            alt="coin icon"
-            class="size-7 hidden md:block"
-          />
-          <p
-            class="text-xl font-semibold text-text-secondary text-center border border-btn-secondary rounded-lg md:text-left md:border-none"
-          >
-            <span>5500</span> BDT
-          </p>
+            Blog
+          </button>
+          <div class="flex justify-center items-center gap-4 md:grow">
+            <img
+              src="./assets/logo.png"
+              alt="donate bangladesh logo"
+              class="size-12 hidden md:block"
+            />
+            <p
+              class="text-xl font-semibold text-text-primary text-center md:text-left"
+            >
+              Donate Bangladesh
+            </p>
+          </div>
+          <div class="flex justify-end items-center gap-2">
+            <img
+              src="./assets/coin.png"
+              alt="coin icon"
+              class="size-7 hidden md:block"
+            />
+            <p
+              class="text-xl font-semibold text-text-secondary text-center border border-btn-secondary rounded-lg md:text-left md:border-none"
+            >
+              <span>5500</span> BDT
+            </p>
+          </div>
         </div>
       </nav>
-    </header>
 
-    <main class="container mx-auto">
       <!-- donation and history button section -->
-      <section class="flex justify-center items-stretch gap-4 mb-8 md:gap-8">
+      <section class="flex justify-center items-stretch gap-4 pb-8 md:gap-8">
         <button
           class="text-xl font-semibold text-text-primary bg-btn-primary px-8 py-4 rounded-lg"
         >
@@ -96,16 +97,30 @@
           History
         </button>
       </section>
+    </header>
 
+    <main class="container mx-auto">
       <!-- donation cards section -->
       <section class="grid grid-cols-1 gap-8 mb-12 md:mb-20">
-        <div class="grid grid-rows-2 gap-8 p-6 border border-form-bg rounded-2xl md:p-8 md:grid-cols-2 md:grid-rows-none">
-          <div class="bg-[url('./assets/noakhali.png')] bg-cover bg-no-repeat bg-center rounded-xl"></div>
+        <div
+          class="grid grid-rows-2 gap-8 p-6 border border-form-bg rounded-2xl md:p-8 md:grid-cols-2 md:grid-rows-none"
+        >
+          <div
+            class="bg-[url('./assets/noakhali.png')] bg-cover bg-no-repeat bg-center rounded-xl"
+          ></div>
           <div>
-            <button class="flex justify-start items-center gap-2 text-text-secondary font-semibold bg-btn-amount rounded-lg mb-4 px-4 py-[10px]">
-              <img src="./assets/coin.png" alt="coin-icon" class="size-6" /><span>0</span> BDT
+            <button
+              class="flex justify-start items-center gap-2 text-text-secondary font-semibold bg-btn-amount rounded-lg mb-4 px-4 py-[10px]"
+            >
+              <img
+                src="./assets/coin.png"
+                alt="coin-icon"
+                class="size-6"
+              /><span>0</span> BDT
             </button>
-            <h2 class="text-text-primary text-xl font-bold mb-4">Donate for Flood at Noakhali, Bangladesh</h2>
+            <h2 class="text-text-primary text-xl font-bold mb-4">
+              Donate for Flood at Noakhali, Bangladesh
+            </h2>
             <p class="font-light text-text-secondary text-justify mb-6">
               The recent floods in Noakhali have caused significant damage to
               homes infrastructure. Your donation will help provide essential
@@ -122,19 +137,51 @@
                 placeholder="Write Donation Amount"
                 class="text-text-secondary p-[18px] border border-form-bg rounded-lg placeholder:text-text-form placeholder:font-light"
               />
-              <button class="text-text-primary text-xl font-semibold px-8 py-4 bg-btn-primary rounded-lg">Donate Now</button>
+      
+              <!-- Open the modal using ID.showModal() method -->
+              <button class="text-text-primary text-xl font-semibold px-8 py-4 bg-btn-primary rounded-lg" onclick="my_modal_1.showModal()">
+                Donate Now
+              </button>
+              <dialog id="my_modal_1" class="modal">
+                <div class="modal-box">
+                  <h3 class="text-5xl font-bold text-center mb-4">Congrats!</h3>
+                  <img src="./assets/coin.png" alt="coin-icon" class="size-10 mx-auto mb-5">
+                  <p class="text-gray-600 font-medium text-center py-4">
+                    You Have Donated for Humankind
+                  </p>
+                  <p class="text-2xl font-semibold text-center">Successfully</p>
+                  <div class="modal-action">
+                    <form method="dialog">
+                      <!-- if there is a button in form, it will close the modal -->
+                      <button class="btn mx-auto" onclick="my_modal_1.close()">close confirmation</button>
+                    </form>
+                  </div>
+                </div>
+              </dialog>
             </form>
           </div>
         </div>
 
-        <div class="grid grid-rows-2 gap-8 p-6 border border-form-bg rounded-2xl md:p-8 md:grid-cols-2 md:grid-rows-none">
-          <div class="bg-[url('./assets/feni.png')] bg-cover bg-no-repeat bg-center rounded-xl"></div>
+        <div
+          class="grid grid-rows-2 gap-8 p-6 border border-form-bg rounded-2xl md:p-8 md:grid-cols-2 md:grid-rows-none"
+        >
+          <div
+            class="bg-[url('./assets/feni.png')] bg-cover bg-no-repeat bg-center rounded-xl"
+          ></div>
           <div>
-            <button class="flex justify-start items-center gap-2 text-text-secondary font-semibold bg-btn-amount rounded-lg mb-4 px-4 py-[10px]">
-              <img src="./assets/coin.png" alt="coin-icon" class="size-6"/><span>600</span>
+            <button
+              class="flex justify-start items-center gap-2 text-text-secondary font-semibold bg-btn-amount rounded-lg mb-4 px-4 py-[10px]"
+            >
+              <img
+                src="./assets/coin.png"
+                alt="coin-icon"
+                class="size-6"
+              /><span>600</span>
               BDT
             </button>
-            <h2 class="text-text-primary text-xl font-bold mb-4">Donate for Flood Relief in Feni,Bangladesh</h2>
+            <h2 class="text-text-primary text-xl font-bold mb-4">
+              Donate for Flood Relief in Feni,Bangladesh
+            </h2>
             <p class="font-light text-text-secondary text-justify mb-6">
               The recent floods in Feni have devastated local communities,
               leading to severe disruption and loss. Your generous donation will
@@ -152,19 +199,52 @@
                 id="feni-donation-amount"
                 placeholder="Write Donation Amount"
                 class="text-text-secondary p-[18px] border border-form-bg rounded-lg placeholder:text-text-form placeholder:font-light"
-              /><button class="text-text-primary text-xl font-semibold px-8 py-4 bg-btn-primary rounded-lg">Donate Now</button>
+              />
+
+              <!-- Open the modal using ID.showModal() method -->
+              <button class="text-text-primary text-xl font-semibold px-8 py-4 bg-btn-primary rounded-lg" onclick="my_modal_2.showModal()">
+                Donate Now
+              </button>
+              <dialog id="my_modal_2" class="modal">
+                <div class="modal-box">
+                  <h3 class="text-5xl font-bold text-center mb-4">Congrats!</h3>
+                  <img src="./assets/coin.png" alt="coin-icon" class="size-10 mx-auto mb-5">
+                  <p class="text-gray-600 font-medium text-center py-4">
+                    You Have Donated for Humankind
+                  </p>
+                  <p class="text-2xl font-semibold text-center">Successfully</p>
+                  <div class="modal-action">
+                    <form method="dialog">
+                      <!-- if there is a button in form, it will close the modal -->
+                      <button class="btn mx-auto" onclick="my_modal_2.close()">close confirmation</button>
+                    </form>
+                  </div>
+                </div>
+              </dialog>
             </form>
           </div>
         </div>
 
-        <div class="grid grid-rows-2 gap-8 p-6 border border-form-bg rounded-2xl md:p-8 md:grid-cols-2 md:grid-rows-none">
-          <div class="bg-[url('./assets/quota-protest.png')] bg-cover bg-no-repeat bg-center rounded-xl"></div>
+        <div
+          class="grid grid-rows-2 gap-8 p-6 border border-form-bg rounded-2xl md:p-8 md:grid-cols-2 md:grid-rows-none"
+        >
+          <div
+            class="bg-[url('./assets/quota-protest.png')] bg-cover bg-no-repeat bg-center rounded-xl"
+          ></div>
           <div>
-            <button class="flex justify-start items-center gap-2 text-text-secondary font-semibold bg-btn-amount rounded-lg mb-4 px-4 py-[10px]">
-              <img src="./assets/coin.png" alt="coin-icon" class="size-6"/><span>2400</span>
+            <button
+              class="flex justify-start items-center gap-2 text-text-secondary font-semibold bg-btn-amount rounded-lg mb-4 px-4 py-[10px]"
+            >
+              <img
+                src="./assets/coin.png"
+                alt="coin-icon"
+                class="size-6"
+              /><span>2400</span>
               BDT
             </button>
-            <h2 class="text-text-primary text-xl font-bold mb-4">Aid for Injured in the Quota Movement</h2>
+            <h2 class="text-text-primary text-xl font-bold mb-4">
+              Aid for Injured in the Quota Movement
+            </h2>
             <p class="font-light text-text-secondary text-justify mb-6">
               The recent Quota movement has resulted in numerous injuries and
               significant hardship for many individuals. Your support is crucial
@@ -183,7 +263,28 @@
                 id="quota-donation-amount"
                 placeholder="Write Donation Amount"
                 class="text-text-secondary p-[18px] border border-form-bg rounded-lg placeholder:text-text-form placeholder:font-light"
-              /><button class="text-text-primary text-xl font-semibold px-8 py-4 bg-btn-primary rounded-lg">Donate Now</button>
+              />
+
+              <!-- Open the modal using ID.showModal() method -->
+              <button class="text-text-primary text-xl font-semibold px-8 py-4 bg-btn-primary rounded-lg" onclick="my_modal_3.showModal()">
+                Donate Now
+              </button>
+              <dialog id="my_modal_3" class="modal">
+                <div class="modal-box">
+                  <h3 class="text-5xl font-bold text-center mb-4">Congrats!</h3>
+                  <img src="./assets/coin.png" alt="coin-icon" class="size-10 mx-auto mb-5">
+                  <p class="text-gray-600 font-medium text-center py-4">
+                    You Have Donated for Humankind
+                  </p>
+                  <p class="text-2xl font-semibold text-center">Successfully</p>
+                  <div class="modal-action">
+                    <form method="dialog">
+                      <!-- if there is a button in form, it will close the modal -->
+                      <button class="btn mx-auto" onclick="my_modal_3.close()">close confirmation</button>
+                    </form>
+                  </div>
+                </div>
+              </dialog>
             </form>
           </div>
         </div>

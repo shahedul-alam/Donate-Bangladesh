@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -28,6 +28,7 @@
       extend: {
         colors: {
           "header-bg": "#F9F7F3",
+          "blur-bg": "rgba(255, 255, 255, 0.9)",
           "btn-primary": "#B4F461",
           "btn-secondary": "rgba(17, 17, 17, 0.3)",
           "btn-amount": "rgba(17, 17, 17, 0.05)",
@@ -36,15 +37,104 @@
           "text-form": "rgba(17, 17, 17, 0.4)",
           "form-bg": "rgba(17, 17, 17, 0.1)",
         },
+        fontFamily: {
+          lexend: ["Lexend", "sans-serif"],
+        },
       },
     },
   };
 </script>
 </head>
-<body>
-  <header></header>
-  <main></main>
-  <footer></footer>
+<body class="font-lexend">
+  <header class="bg-blur-bg sticky top-0">
+    <!-- Navbar Section -->
+    <nav
+      class="bg-header-bg mb-10 md:mb-20"
+    >
+      <div class="container flex justify-between items-stretch mx-auto py-6 md:items-center">
+        <button
+        class="text-xl text-text-primary font-semibold bg-btn-primary px-8 py-3 rounded-lg"
+      >
+        Home
+      </button>
+      <div class="flex justify-center items-center gap-4 md:grow">
+        <img
+          src="./assets/logo.png"
+          alt="donate bangladesh logo"
+          class="size-12 hidden md:block"
+        />
+        <p
+          class="text-xl font-semibold text-text-primary text-center md:text-left"
+        >
+          Donate Bangladesh
+        </p>
+      </div>
+      <div class="flex justify-end items-center gap-2">
+        <img
+          src="./assets/coin.png"
+          alt="coin icon"
+          class="size-7 hidden md:block"
+        />
+        <p
+          class="text-xl font-semibold text-text-secondary text-center border border-btn-secondary rounded-lg md:text-left md:border-none"
+        >
+          <span>5500</span> BDT
+        </p>
+      </div>
+      </div>
+    </nav>
+  </header>
+
+  <main class="container mx-auto mb-[80px]">
+    <div class="flex justify-start items-center gap-3 mb-7">
+      <h1 class="text-text-primary text-4xl font-bold md:text-5xl">Important FAQ</h1>
+      <img src="./assets/quiz_icon.svg" alt="quiz-icon" class="size-10 md:size-12">
+    </div>
+    
+    <div class="collapse collapse-arrow bg-base-200">
+      <input type="radio" name="my-accordion-2" checked="checked" />
+      <div class="collapse-title text-xl font-medium">What is the Document Object Model (DOM)?</div>
+      <div class="collapse-content">
+        <p>The Document Object Model (DOM) is a programming interface for web documents. It represents the structure of an HTML or XML document as a tree of objects, where each node corresponds to a part of the document, such as elements, attributes, and text. The DOM allows programs (like JavaScript) to access and manipulate the document's structure, content, and style dynamically, enabling changes to be made to a web page without reloading it.</p>
+      </div>
+    </div>
+    <div class="collapse collapse-arrow bg-base-200">
+      <input type="radio" name="my-accordion-2" />
+      <div class="collapse-title text-xl font-medium">How do you select an element from the DOM?</div>
+      <div class="collapse-content">
+        <p>To select an element from the DOM using JavaScript, you can use several methods provided by the document object. Here are the most common ones:</p>
+        <ul></ul>
+          <li>getElementById()</li>
+          <li>getElementsByClassName()</li>
+          <li>getElementsByTagName()</li>
+          <li>querySelector()</li>
+          <li>querySelectorAll()</li>
+        </ul>
+      </div>
+    </div>
+    <div class="collapse collapse-arrow bg-base-200">
+      <input type="radio" name="my-accordion-2" />
+      <div class="collapse-title text-xl font-medium">What is event delegation in the context of the DOM, and why is it useful?</div>
+      <div class="collapse-content">
+        <p>Event delegation is a technique in the DOM where instead of attaching event listeners to individual child elements, you attach a single event listener to a parent element. The parent element listens for events that bubble up from its child elements, allowing you to handle events more efficiently, especially in cases where child elements are dynamically added or removed.</p>
+      </div>
+    </div>
+    <div class="collapse collapse-arrow bg-base-200">
+      <input type="radio" name="my-accordion-2" />
+      <div class="collapse-title text-xl font-medium">How do you manipulate an element's attributes and styles using the DOM?</div>
+      <div class="collapse-content">
+        <p>In the DOM, you can manipulate an element’s attributes and styles using JavaScript. Below are different methods for doing this:</p>
+        <ul></ul>
+          <li>getAttribute()</li>
+          <li>setAttribute()</li>
+          <li>removeAttribute()</li>
+          <li>hasAttribute()</li>
+          <li>element.style</li>
+          <li>getComputedStyle()</li>
+        </ul>
+      </div>
+    </div>
+  </main>
 
   <script src="./js/script.js"></script>
 </body>
