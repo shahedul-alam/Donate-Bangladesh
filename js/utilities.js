@@ -5,8 +5,13 @@ const donations = JSON.parse(localStorage.getItem('donation')) || {
   quota: 2400
 };
 
+let history = JSON.parse(localStorage.getItem('donationHistory')) || '';
+
 // updating the website amounts with global obj value
 updateAmounts();
+
+// updating the donation history when the page lodes
+updateHistory();
 
 // converting the form input value to integer
 function convertValueToNumber(id) {
@@ -41,6 +46,9 @@ function handleDonation(e, campaign) {
     // updating site amounts
     updateAmounts();
 
+    // create donation history
+    handleDonationHistory(donationAmount, campaign);
+
     // updating local storage
     localStorage.setItem('donation', JSON.stringify(donations));
   } else {
@@ -65,4 +73,29 @@ function updateAmounts() {
   document.getElementById('quota-total-donation').innerText = donations.quota;
 }
 
-// handle donation button
+// handle donation history
+function handleDonationHistory(donationAmount, campaign) {
+  let campaignName; 
+  if(campaign === 'noakhali') {
+    campaignName = 'Donated for Flood at Noakhali, Bangladesh';
+  } else if(campaign === 'feni') {
+    campaignName = 'Donated for Flood Relief in Feni, Bangladesh';
+  } else if (campaign === 'quota') {
+    campaignName = 'Donated for Aid for Injured in the Quota Movement, Bangladesh';
+  }
+
+  const d = new Date();
+  
+  history += `<div class="border border-form-bg rounded-2xl p-8">
+    <h2 class="text-xl text-text-primary font-bold mb-4">${donationAmount} Taka is ${campaignName}</h2>
+    <p class="text-text-secondary font-light">Date : ${d}</p>
+</div>`;
+
+  updateHistory();
+  localStorage.setItem('donationHistory', JSON.stringify(history));
+}
+
+// update donation history
+function updateHistory() {
+  document.getElementById('history-container').innerHTML = history;
+}

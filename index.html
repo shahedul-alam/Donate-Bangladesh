@@ -102,8 +102,15 @@
     </header>
 
     <main class="container mx-auto">
-      <!-- donation cards section -->
-      <section class="grid grid-cols-1 gap-8 mb-12 md:mb-20">
+      <!-- history section -->
+      <section class="hidden mb-10 md:mb-20" id="history-section">
+        <div class="grid grid-cols-1 gap-6" id="history-container">
+
+        </div>
+      </section>
+
+      <!-- donation section -->
+      <section class="grid grid-cols-1 gap-8 mb-12 md:mb-20" id="donation-section">
         <div
           class="grid grid-rows-2 gap-8 p-6 border border-form-bg rounded-2xl md:p-8 md:grid-cols-2 md:grid-rows-none"
         >
@@ -293,7 +300,7 @@
       </section>
     </main>
 
-    <footer class="h-[100px] bg-header-bg"></footer>
+    <footer class="h-[100px] bg-header-bg" id="footer"></footer>
 
     <script src="./js/script.js"></script>
     <script src="./js/utilities.js"></script>
