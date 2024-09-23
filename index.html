@@ -53,7 +53,7 @@
           class="container flex justify-between items-stretch mx-auto py-6 md:items-center"
         >
           <button
-            class="text-xl text-text-primary font-semibold bg-btn-primary px-8 py-3 rounded-lg"
+            class="text-xl text-text-primary font-semibold bg-btn-primary px-8 py-3 rounded-lg" id="blog-btn"
           >
             Blog
           </button>
@@ -78,7 +78,7 @@
             <p
               class="text-xl font-semibold text-text-secondary text-center border border-btn-secondary rounded-lg md:text-left md:border-none"
             >
-              <span>5500</span> BDT
+              <span id="balance"></span> BDT
             </p>
           </div>
         </div>
@@ -88,11 +88,13 @@
       <section class="flex justify-center items-stretch gap-4 pb-8 md:gap-8">
         <button
           class="text-xl font-semibold text-text-primary bg-btn-primary px-8 py-4 rounded-lg"
+          id="donation-btn"
         >
           Donation
         </button>
         <button
           class="text-xl font-semibold text-text-secondary border border-btn-secondary rounded-lg px-8 py-4"
+          id="history-btn"
         >
           History
         </button>
@@ -116,7 +118,7 @@
                 src="./assets/coin.png"
                 alt="coin-icon"
                 class="size-6"
-              /><span>0</span> BDT
+              /><span id="noakhali-total-donation"></span> BDT
             </button>
             <h2 class="text-text-primary text-xl font-bold mb-4">
               Donate for Flood at Noakhali, Bangladesh
@@ -139,10 +141,10 @@
               />
       
               <!-- Open the modal using ID.showModal() method -->
-              <button class="text-text-primary text-xl font-semibold px-8 py-4 bg-btn-primary rounded-lg" onclick="my_modal_1.showModal()">
+              <button class="text-text-primary text-xl font-semibold px-8 py-4 bg-btn-primary rounded-lg" id="donate-btn-1">
                 Donate Now
               </button>
-              <dialog id="my_modal_1" class="modal">
+              <dialog id="noakhali_modal" class="modal">
                 <div class="modal-box">
                   <h3 class="text-5xl font-bold text-center mb-4">Congrats!</h3>
                   <img src="./assets/coin.png" alt="coin-icon" class="size-10 mx-auto mb-5">
@@ -153,7 +155,7 @@
                   <div class="modal-action">
                     <form method="dialog">
                       <!-- if there is a button in form, it will close the modal -->
-                      <button class="btn mx-auto" onclick="my_modal_1.close()">close confirmation</button>
+                      <button class="btn mx-auto" id="close-btn-1">close confirmation</button>
                     </form>
                   </div>
                 </div>
@@ -176,7 +178,7 @@
                 src="./assets/coin.png"
                 alt="coin-icon"
                 class="size-6"
-              /><span>600</span>
+              /><span id="feni-total-donation"></span>
               BDT
             </button>
             <h2 class="text-text-primary text-xl font-bold mb-4">
@@ -202,10 +204,10 @@
               />
 
               <!-- Open the modal using ID.showModal() method -->
-              <button class="text-text-primary text-xl font-semibold px-8 py-4 bg-btn-primary rounded-lg" onclick="my_modal_2.showModal()">
+              <button class="text-text-primary text-xl font-semibold px-8 py-4 bg-btn-primary rounded-lg" id="donate-btn-2">
                 Donate Now
               </button>
-              <dialog id="my_modal_2" class="modal">
+              <dialog id="feni_modal" class="modal">
                 <div class="modal-box">
                   <h3 class="text-5xl font-bold text-center mb-4">Congrats!</h3>
                   <img src="./assets/coin.png" alt="coin-icon" class="size-10 mx-auto mb-5">
@@ -216,7 +218,7 @@
                   <div class="modal-action">
                     <form method="dialog">
                       <!-- if there is a button in form, it will close the modal -->
-                      <button class="btn mx-auto" onclick="my_modal_2.close()">close confirmation</button>
+                      <button class="btn mx-auto" id="close-btn-2">close confirmation</button>
                     </form>
                   </div>
                 </div>
@@ -239,7 +241,7 @@
                 src="./assets/coin.png"
                 alt="coin-icon"
                 class="size-6"
-              /><span>2400</span>
+              /><span id="quota-total-donation"></span>
               BDT
             </button>
             <h2 class="text-text-primary text-xl font-bold mb-4">
@@ -266,10 +268,10 @@
               />
 
               <!-- Open the modal using ID.showModal() method -->
-              <button class="text-text-primary text-xl font-semibold px-8 py-4 bg-btn-primary rounded-lg" onclick="my_modal_3.showModal()">
+              <button class="text-text-primary text-xl font-semibold px-8 py-4 bg-btn-primary rounded-lg" id="donate-btn-3">
                 Donate Now
               </button>
-              <dialog id="my_modal_3" class="modal">
+              <dialog id="quota_modal" class="modal">
                 <div class="modal-box">
                   <h3 class="text-5xl font-bold text-center mb-4">Congrats!</h3>
                   <img src="./assets/coin.png" alt="coin-icon" class="size-10 mx-auto mb-5">
@@ -280,7 +282,7 @@
                   <div class="modal-action">
                     <form method="dialog">
                       <!-- if there is a button in form, it will close the modal -->
-                      <button class="btn mx-auto" onclick="my_modal_3.close()">close confirmation</button>
+                      <button class="btn mx-auto" id="close-btn-3">close confirmation</button>
                     </form>
                   </div>
                 </div>
@@ -294,5 +296,6 @@
     <footer class="h-[100px] bg-header-bg"></footer>
 
     <script src="./js/script.js"></script>
+    <script src="./js/utilities.js"></script>
   </body>
 </html>
