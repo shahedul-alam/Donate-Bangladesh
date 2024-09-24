@@ -46,41 +46,43 @@
 </script>
 </head>
 <body class="font-lexend">
-  <header class="bg-blur-bg sticky top-0">
+  <header class="bg-blur-bg sticky top-0 z-50">
     <!-- Navbar Section -->
     <nav
       class="bg-header-bg mb-10 md:mb-20"
     >
-      <div class="container flex justify-between items-stretch mx-auto py-6 md:items-center">
-        <button
-          class="text-xl text-text-primary font-semibold bg-btn-primary px-8 py-3 rounded-lg" id="home-btn"
+      <div
+        class="container flex flex-col justify-stretch items-center gap-3 mx-auto py-6 md:flex-row md:justify-between md:order-1"
       >
-        Home
-      </button>
-      <div class="flex justify-center items-center gap-4 md:grow">
-        <img
-          src="./assets/logo.png"
-          alt="donate bangladesh logo"
-          class="size-12 hidden md:block"
-        />
-        <p
-          class="text-xl font-semibold text-text-primary text-center md:text-left"
+        <button
+          class="text-xl text-text-primary font-semibold bg-btn-primary px-8 py-3 rounded-lg order-2" id="home-btn"
         >
-          Donate Bangladesh
-        </p>
-      </div>
-      <div class="flex justify-end items-center gap-2">
-        <img
-          src="./assets/coin.png"
-          alt="coin icon"
-          class="size-7 hidden md:block"
-        />
-        <p
-          class="text-xl font-semibold text-text-secondary text-center border border-btn-secondary rounded-lg md:text-left md:border-none"
-        >
-          <span id="balance"></span> BDT
-        </p>
-      </div>
+          Home
+        </button>
+        <div class="flex justify-center items-center gap-4 order-1 md:grow md:order-2">
+          <img
+            src="./assets/logo.png"
+            alt="donate bangladesh logo"
+            class="size-8 md:size-12"
+          />
+          <p
+            class="text-xl font-semibold text-text-primary text-center"
+          >
+            Donate Bangladesh
+          </p>
+        </div>
+        <div class="flex justify-end items-stretch order-3 gap-2 md:order-3">
+          <img
+            src="./assets/coin.png"
+            alt="coin icon"
+            class="size-7"
+          />
+          <p
+            class="text-xl font-semibold text-text-secondary"
+          >
+            <span id="balance"></span> BDT
+          </p>
+        </div>
       </div>
     </nav>
   </header>

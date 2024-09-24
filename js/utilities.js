@@ -15,12 +15,12 @@ updateHistory();
 
 // converting the form input value to integer
 function convertValueToNumber(id) {
-  return parseFloat(document.getElementById(id).value);
+  return Number(document.getElementById(id).value);
 }
 
 // converting the element's text to integer
 function convertTextToNumber(id) {
-  return parseFloat(document.getElementById(id).innerText);
+  return Number(document.getElementById(id).innerText);
 }
 
 // handling the donations 
@@ -30,9 +30,9 @@ function handleDonation(e, campaign) {
   const donationAmount = convertValueToNumber(`${campaign}-donation-amount`);
   const balance = convertTextToNumber("balance");
   const TotalDonation = convertTextToNumber(`${campaign}-total-donation`);
-  const donationModalObj = document.getElementById(`${campaign}_modal`);
+  const donationModalObj = document.getElementById('confirmation-modal');
 
-  if(donationAmount > 0 && balance >= donationAmount) {
+  if(donationAmount > 0 && balance >= donationAmount && typeof donationAmount === 'number') {
     // showing success modal
     donationModalObj.showModal();
 
